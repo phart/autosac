@@ -5,7 +5,7 @@ checks.py
 
 System checks.
 
-Copyright (c) 2015  Nexenta Systems
+Copyright (c) 2016  Nexenta Systems
 William Kettler <william.kettler@nexenta.com>
 """
 
@@ -275,7 +275,7 @@ def check_dns_lookup(name):
 
     try:
         socket.gethostbyname(name)
-    except socker.gaierror, e:
+    except socket.gaierror, e:
         logger.error("Failed to resolve %s" % name)
         logger.debug(str(e), exc_info=True)
         check["status"] = False
